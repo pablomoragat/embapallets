@@ -4,9 +4,12 @@
 @media(max-width:560px){.wrap{width:min(100% - 28px,1160px)}.brand{font-size:14px}.hero h1{font-size:43px}.hero-actions{flex-direction:column;align-items:stretch}.trust-strip{grid-template-columns:1fr}.trust-strip div{border-right:0;border-bottom:1px solid #ddd4c5;padding:12px}.use-cards,.contact-form{grid-template-columns:1fr}.contact-form .full{grid-column:auto}.product-image{min-height:270px}.footer-grid{grid-template-columns:1fr}}
 
 /* EMBAPLEX: imagen de producto 04 y logo asociado en el hero */
+.hero{height:760px;min-height:760px;max-height:760px}
+.hero-image{height:682px;max-height:682px}
 .embaplex-note{display:flex;align-items:center;gap:16px;padding:12px 20px 12px 12px}
 .embaplex-note p{margin:0}
 .embaplex-logo{position:relative;display:block;flex:0 0 145px;height:72px;overflow:hidden;border-radius:4px;background:#fff}
 .embaplex-logo img{position:absolute;width:205px;max-width:none;height:auto;left:-31px;top:-20px}
 .product-image-collares img{object-position:center 40%}
+@media(max-width:900px){.hero{height:auto;min-height:760px;max-height:none}.hero-image{height:calc(100% - 68px);max-height:none}}
 @media(max-width:560px){.embaplex-note{align-items:flex-start;flex-direction:column}.embaplex-logo{flex-basis:72px}}
