@@ -247,3 +247,31 @@
   }
   .hero-layout-wide .hero-content{padding-top:0 !important}
 }
+
+/* Composición armónica desktop: tres módulos alineados visualmente */
+@media(min-width:1051px){
+  .hero-layout-wide{
+    grid-template-columns:minmax(360px,.92fr) minmax(300px,.56fr) minmax(430px,1fr) !important;
+    gap:18px !important;
+    align-items:start !important;
+    padding-top:42px !important;
+  }
+  .hero-layout-wide .hero-content,
+  .hero-layout-wide .hero-3d,
+  .hero-layout-wide .hero-real-product{
+    align-self:start !important;
+    margin-top:0 !important;
+  }
+  .hero-layout-wide .hero-content{
+    padding-top:0 !important;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+  }
+  .hero-layout-wide .hero-content .eyebrow{margin-top:0 !important;margin-bottom:14px}
+  .hero-layout-wide .hero-content h1{margin-top:0 !important}
+  .hero-layout-wide .hero-3d{max-width:520px}
+  .hero-layout-wide .hero-real-product{margin-top:0 !important}
+  .hero-layout-wide .viewer-heading,
+  .hero-layout-wide .real-product-title{min-height:42px}
+}
