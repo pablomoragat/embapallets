@@ -416,3 +416,82 @@
     height:185px !important;
   }
 }
+
+/* Matriz 2x2: 3D y producto real comparten filas y quedan siempre alineados */
+@media(min-width:1051px){
+  .hero-layout-wide{
+    grid-template-columns:minmax(380px,.82fr) minmax(780px,1.78fr) !important;
+    gap:22px !important;
+    align-items:start !important;
+  }
+  .hero-layout-wide .hero-content{grid-column:1 !important}
+  .hero-product-matrix{
+    grid-column:2 !important;
+    display:grid !important;
+    grid-template-columns:minmax(350px,.82fr) minmax(470px,1.18fr) !important;
+    grid-template-rows:auto 1fr 1fr !important;
+    gap:10px 12px !important;
+    padding:14px !important;
+    border:1px solid rgba(255,255,255,.22);
+    border-radius:18px;
+    background:rgba(255,255,255,.055);
+    box-sizing:border-box;
+    min-width:0;
+  }
+  .matrix-heading{min-height:40px;display:flex;align-items:flex-start;box-sizing:border-box}
+  .matrix-heading-3d{justify-content:space-between;gap:12px}
+  .matrix-heading-3d strong{font-size:17px;line-height:1.15}
+  .matrix-heading-3d span{font-size:11px;line-height:1.25;text-align:right;opacity:.82;max-width:175px}
+  .matrix-heading-real{align-items:center}
+  .matrix-heading-real span{font-size:11px;font-weight:800;letter-spacing:.1em;color:#f3b43b}
+  .matrix-cell{min-width:0;margin:0 !important;height:248px !important;box-sizing:border-box}
+  .matrix-3d{display:flex !important;flex-direction:column !important;overflow:hidden}
+  .matrix-3d .viewer-label{padding:10px 12px 0 !important}
+  .matrix-3d .pallet-canvas{height:auto !important;min-height:0 !important;flex:1 !important}
+  .matrix-3d .viewer-spec{padding:0 12px 9px !important}
+  .matrix-real{
+    display:flex !important;
+    flex-direction:column !important;
+    padding:10px !important;
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:13px;
+    background:rgba(255,255,255,.035);
+    overflow:hidden;
+  }
+  .matrix-real .real-product-name{
+    margin:0 0 8px !important;padding:0 !important;
+    font-size:18px !important;line-height:1.1 !important;color:#fff
+  }
+  .matrix-real .real-product-body{
+    display:grid !important;
+    grid-template-columns:minmax(0,1.35fr) minmax(160px,.65fr) !important;
+    gap:10px !important;flex:1 !important;min-height:0
+  }
+  .matrix-real .real-product-photo{
+    width:100% !important;height:100% !important;min-height:0 !important;
+    margin:0 !important;overflow:hidden !important;border-radius:10px
+  }
+  .matrix-real .real-product-photo img{
+    width:100% !important;height:100% !important;display:block !important;
+    object-fit:cover !important;object-position:center !important
+  }
+  .matrix-real .real-product-price{
+    width:100% !important;height:100% !important;margin:0 !important;
+    padding:13px !important;box-sizing:border-box !important;border-radius:10px !important
+  }
+  .matrix-real .real-product-price>strong{font-size:27px !important;margin:7px 0 !important}
+  .matrix-real .real-product-price .button{padding:11px 7px !important;font-size:11px !important}
+}
+@media(min-width:1051px) and (max-height:850px){
+  .hero-product-matrix{grid-template-rows:auto 1fr 1fr !important}
+  .matrix-cell{height:215px !important}
+  .hero-layout-wide{padding-top:28px !important;padding-bottom:24px !important}
+}
+@media(max-width:1050px){
+  .hero-product-matrix{display:grid;gap:14px}
+  .matrix-heading-real{display:none}
+  .matrix-heading-3d{display:flex;justify-content:space-between;gap:12px}
+  .matrix-real{padding:12px;border:1px solid rgba(255,255,255,.16);border-radius:14px;background:rgba(255,255,255,.04)}
+  .real-product-body{display:grid;grid-template-columns:1fr;gap:10px}
+  .real-product-photo img{width:100%;height:auto;display:block}
+}
