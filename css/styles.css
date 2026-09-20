@@ -235,3 +235,15 @@
   .hero-layout-wide .pallet-canvas{height:200px;min-height:200px}
   .hero-layout-wide .hero-real-product{align-self:start}
 }
+
+/* Alinear las tres columnas por su borde superior */
+@media(min-width:1051px){
+  .hero-layout-wide{align-items:start !important}
+  .hero-layout-wide .hero-content,
+  .hero-layout-wide .hero-3d,
+  .hero-layout-wide .hero-real-product{
+    align-self:start !important;
+    margin-top:0 !important;
+  }
+  .hero-layout-wide .hero-content{padding-top:0 !important}
+}
