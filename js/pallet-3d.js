@@ -1,5 +1,5 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
-import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/controls/OrbitControls.js';
+import * as THREE from 'https://esm.sh/three@0.180.0';
+import { OrbitControls } from 'https://esm.sh/three@0.180.0/examples/jsm/controls/OrbitControls.js';
 
 const wood = new THREE.MeshStandardMaterial({color:0xc89452,roughness:.72,metalness:0});
 const woodSide = new THREE.MeshStandardMaterial({color:0xa66f37,roughness:.82,metalness:0});
