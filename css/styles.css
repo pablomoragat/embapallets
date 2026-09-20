@@ -330,3 +330,20 @@
   .hero-layout-wide .real-product-item .real-product-photo{height:190px !important}
   .hero-layout-wide .real-product-title{min-height:44px !important}
 }
+
+/* Productos reales: dos filas alineadas al 3D y fotos completas */
+@media(min-width:1051px){
+  .hero-layout-wide .hero-real-product{display:flex !important;flex-direction:column !important}
+  .hero-layout-wide .real-product-gallery{display:grid !important;grid-template-rows:1fr 1fr !important;gap:14px !important;flex:1}
+  .hero-layout-wide .real-product-item{display:grid !important;grid-template-columns:minmax(0,1.45fr) minmax(155px,.55fr) !important;gap:10px !important;min-height:0}
+  .hero-layout-wide .real-product-item .real-product-photo{
+    height:100% !important;min-height:0 !important;
+    background:#efe8dc !important;
+    display:flex !important;align-items:center !important;justify-content:center !important;
+  }
+  .hero-layout-wide .real-product-item .real-product-photo img{
+    width:100% !important;height:100% !important;
+    object-fit:contain !important;object-position:center center !important;
+  }
+  .hero-layout-wide .real-product-item .real-product-price{height:100% !important}
+}
