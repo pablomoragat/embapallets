@@ -388,3 +388,31 @@
     box-sizing:border-box !important;margin:0 !important;
   }
 }
+
+/* Ajuste final según referencia aprobada: separar segundo producto real */
+@media(min-width:1051px){
+  .hero-layout-wide .real-product-gallery{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:0 !important;
+  }
+  .hero-layout-wide .real-product-item{
+    flex:0 0 auto !important;
+  }
+  .hero-layout-wide .real-product-item + .real-product-item{
+    margin-top:52px !important;
+  }
+  .hero-layout-wide .real-product-item .real-product-photo,
+  .hero-layout-wide .real-product-item .real-product-price{
+    height:205px !important;
+  }
+}
+@media(min-width:1051px) and (max-height:850px){
+  .hero-layout-wide .real-product-item + .real-product-item{
+    margin-top:38px !important;
+  }
+  .hero-layout-wide .real-product-item .real-product-photo,
+  .hero-layout-wide .real-product-item .real-product-price{
+    height:185px !important;
+  }
+}
