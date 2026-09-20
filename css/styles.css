@@ -218,3 +218,20 @@
   .hero-layout-wide .real-product-item .real-product-price p{margin:5px 0 8px}
   .hero-layout-wide .real-product-item .real-product-price .button{padding:9px 7px;font-size:11px}
 }
+
+/* Corrección layout desktop: contenido arriba y centro realmente más angosto */
+@media(min-width:1051px){
+  .hero-layout-wide{
+    grid-template-columns:minmax(390px,1.08fr) minmax(300px,.48fr) minmax(430px,1fr) !important;
+    align-items:start !important;
+    padding-top:28px !important;
+  }
+  .hero-layout-wide .hero-content{
+    align-self:start !important;
+    padding-top:58px;
+    max-width:560px;
+  }
+  .hero-layout-wide .hero-3d{width:100%;max-width:560px;justify-self:center}
+  .hero-layout-wide .pallet-canvas{height:200px;min-height:200px}
+  .hero-layout-wide .hero-real-product{align-self:start}
+}
