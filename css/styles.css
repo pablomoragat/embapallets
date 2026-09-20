@@ -347,3 +347,12 @@
   }
   .hero-layout-wide .real-product-item .real-product-price{height:100% !important}
 }
+
+/* Títulos de productos reales */
+@media(min-width:1051px){
+  .hero-layout-wide .real-product-item{grid-template-rows:auto 1fr !important}
+  .hero-layout-wide .real-product-name{grid-column:1/-1;margin:0 0 2px;padding:0 2px;color:#fff;font-size:18px;line-height:1.15;font-weight:800}
+  .hero-layout-wide .real-product-photo{grid-column:1;grid-row:2}
+  .hero-layout-wide .real-product-price{grid-column:2;grid-row:2}
+  .hero-layout-wide .real-product-title{min-height:auto !important;margin-bottom:7px !important}
+}
