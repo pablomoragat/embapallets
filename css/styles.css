@@ -153,3 +153,13 @@
 .hero-real-product{justify-content:flex-start}
 @media(max-width:1050px){.hero-layout-wide{grid-template-columns:1fr}.hero-layout-wide .hero-content{max-width:none}.hero-real-product{grid-column:auto;display:flex}.real-product-gallery{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.hero-layout-wide .hero-content h1{font-size:42px}.real-product-gallery{grid-template-columns:1fr}.hero-layout-wide .pallet-canvas{height:270px}}
+
+/* Corrección definitiva: visores 3D apilados verticalmente */
+.hero-layout-wide .hero-3d{display:flex;flex-direction:column;gap:12px}
+.hero-layout-wide .viewer-heading{display:flex;flex:0 0 auto}
+.hero-layout-wide .pallet-viewer-card{display:flex;flex-direction:column;flex:0 0 auto;width:100%;min-height:0}
+.hero-layout-wide .pallet-canvas{width:100%;height:300px;min-height:300px}
+.hero-layout-wide .hero-down{display:flex;flex:0 0 auto}
+.hero-layout-wide .real-product-gallery{display:block}
+.hero-layout-wide .real-product-gallery .real-product-photo{width:100%;aspect-ratio:4/3}
+@media(max-width:1050px){.hero-layout-wide .hero-3d{display:flex;flex-direction:column}.hero-layout-wide .pallet-canvas{height:300px;min-height:300px}}
