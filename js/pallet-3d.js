@@ -21,7 +21,7 @@ function dimension(g,a,b,text,offset=new THREE.Vector3()){
 function buildPallet(widthMM,lengthMM,numbered=false){
  const g=new THREE.Group(),W=widthMM/100,L=lengthMM/100,deckH=.22,deckW=Math.min(1.25,W/8),topY=1.55;
  const deckCount=widthMM===800?6:7;
- for(let i=0;i<deckCount;i++){const z=-L/2+deckW/2+i*(L-deckW)/(deckCount-1);board(g,W,deckH,deckW,0,topY,z);if(numbered){const n=label(String(i+1),.72);n.position.set(-W*.27,topY+.42,z);g.add(n)}}
+ for(let i=0;i<deckCount;i++){const z=-L/2+deckW/2+i*(L-deckW)/(deckCount-1);board(g,W,deckH,deckW,0,topY,z);if(numbered){const n=label(String(i+1),1.02);n.position.set(-W*.27,topY+.52,z);g.add(n)}}
  const runnerW=.65,runnerH=.26,runnerY=1.15;[-W/2+runnerW/2,0,W/2-runnerW/2].forEach(x=>board(g,runnerW,runnerH,L,x,runnerY,0,woodSide));
  const block=.7,blockH=.72,blockY=.66;[-W/2+block/2,0,W/2-block/2].forEach(x=>[-L/2+block/2,0,L/2-block/2].forEach(z=>board(g,block,blockH,block,x,blockY,z,darkWood)));
  const baseH=.2,baseY=.2;[-W/2+deckW/2,W/2-deckW/2].forEach(x=>board(g,deckW,baseH,L,x,baseY,0,woodSide));board(g,W,baseH,deckW,0,baseY,0,woodSide);
