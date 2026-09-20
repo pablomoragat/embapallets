@@ -25,7 +25,7 @@ function buildPallet(widthMM,lengthMM,numbered=false){
  const runnerW=.65,runnerH=.26,runnerY=1.15;[-W/2+runnerW/2,0,W/2-runnerW/2].forEach(x=>board(g,runnerW,runnerH,L,x,runnerY,0,woodSide));
  const block=.7,blockH=.72,blockY=.66;[-W/2+block/2,0,W/2-block/2].forEach(x=>[-L/2+block/2,0,L/2-block/2].forEach(z=>board(g,block,blockH,block,x,blockY,z,darkWood)));
  const baseH=.2,baseY=.2;[-W/2+deckW/2,W/2-deckW/2].forEach(x=>board(g,deckW,baseH,L,x,baseY,0,woodSide));board(g,W,baseH,deckW,0,baseY,0,woodSide);
- dimension(g,new THREE.Vector3(-W/2,topY+.25,-L/2),new THREE.Vector3(W/2,topY+.25,-L/2),widthMM+' mm',new THREE.Vector3(0,.55,-.55));
+ dimension(g,new THREE.Vector3(-W/2,topY+.25,-L/2),new THREE.Vector3(W/2,topY+.25,-L/2),widthMM+' mm',new THREE.Vector3(0,.65,-.55));
  dimension(g,new THREE.Vector3(W/2,topY+.25,-L/2),new THREE.Vector3(W/2,topY+.25,L/2),lengthMM+' mm',new THREE.Vector3(.65,.55,0));
  dimension(g,new THREE.Vector3(-W/2,topY+.25,-L/2),new THREE.Vector3(-W/2,topY+.25,-L/2+deckW),Math.round(deckW*100)+' mm tabla',new THREE.Vector3(-.7,1.15,0));
  return g
@@ -36,7 +36,7 @@ function init(el,index){
  scene.add(new THREE.HemisphereLight(0xfff3df,0x163b2b,2.2));const key=new THREE.DirectionalLight(0xffffff,3.4);key.position.set(6,10,8);key.castShadow=true;scene.add(key);
  const W=Number(el.dataset.palletWidth),L=Number(el.dataset.palletLength);const pallet=buildPallet(W,L,index===1);pallet.rotation.y=-.25;scene.add(pallet);
  const floor=new THREE.Mesh(new THREE.CircleGeometry(9,64),new THREE.ShadowMaterial({color:0x000000,opacity:.18}));floor.rotation.x=-Math.PI/2;floor.position.y=.08;floor.receiveShadow=true;scene.add(floor);
- camera.position.set(12,9,14);const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.target.set(0,.9,0);controls.minDistance=9;controls.maxDistance=22;controls.maxPolarAngle=Math.PI/2.05;controls.autoRotate=true;controls.autoRotateSpeed=.55;controls.addEventListener('start',()=>controls.autoRotate=false);
+ camera.position.set(10.2,7.6,12.2);const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.target.set(0,.9,0);controls.minDistance=7.5;controls.maxDistance=20;controls.maxPolarAngle=Math.PI/2.05;controls.autoRotate=true;controls.autoRotateSpeed=.55;controls.addEventListener('start',()=>controls.autoRotate=false);
  const resize=()=>{const r=el.getBoundingClientRect();renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.updateProjectionMatrix()};resize();new ResizeObserver(resize).observe(el);renderer.setAnimationLoop(()=>{controls.update();renderer.render(scene,camera)})
 }
 document.querySelectorAll('.pallet-canvas').forEach(init);
