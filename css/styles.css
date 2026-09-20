@@ -138,3 +138,18 @@
 @media(max-width:1050px){.hero-layout-wide{grid-template-columns:minmax(280px,.8fr) minmax(540px,1.35fr)}.hero-real-product{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:18px}.real-product-title{grid-column:1/-1}.real-product-photo{aspect-ratio:16/8}.real-product-price{margin-top:0}}
 @media(max-width:900px){.hero-layout-wide{width:min(100% - 40px,1160px);grid-template-columns:1fr}.hero-real-product{grid-column:auto;grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.hero-layout-wide{width:min(100% - 28px,1160px)}.hero-real-product{display:flex}.real-product-photo{aspect-ratio:4/3}}
+
+/* Ajuste hero: 3D vertical + galería real — septiembre 2026 */
+.hero-layout-wide{grid-template-columns:minmax(300px,.72fr) minmax(480px,1fr) minmax(320px,.72fr)}
+.hero-layout-wide .hero-content h1{font-size:clamp(48px,4.2vw,72px);line-height:.98}
+.hero-layout-wide .hero-content .hero-lead{font-size:17px;line-height:1.5}
+.hero-layout-wide .hero-content{max-width:520px}
+.hero-layout-wide .hero-3d{grid-template-columns:1fr;grid-template-rows:auto auto auto auto;min-height:0}
+.hero-layout-wide .viewer-heading,.hero-layout-wide .hero-down{grid-column:1}
+.hero-layout-wide .pallet-canvas{height:245px;min-height:220px}
+.hero-layout-wide .pallet-viewer-card{min-height:305px}
+.real-product-gallery{display:grid;grid-template-columns:1fr;gap:12px}
+.real-product-gallery .real-product-photo{aspect-ratio:16/9}
+.hero-real-product{justify-content:flex-start}
+@media(max-width:1050px){.hero-layout-wide{grid-template-columns:1fr}.hero-layout-wide .hero-content{max-width:none}.hero-real-product{grid-column:auto;display:flex}.real-product-gallery{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.hero-layout-wide .hero-content h1{font-size:42px}.real-product-gallery{grid-template-columns:1fr}.hero-layout-wide .pallet-canvas{height:270px}}
