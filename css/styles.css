@@ -32,6 +32,7 @@
 .price-symbol::after{transform:rotate(90deg);transition:transform .2s ease}
 .price-item[open] .price-symbol::after{transform:rotate(0)}
 .contact-phone-links{display:grid;gap:12px;margin-top:30px}.contact-phone-links a{display:flex;align-items:center;gap:13px;width:max-content;max-width:100%;color:#fff;font-size:17px;font-weight:800;text-decoration:none}.contact-phone-links a:hover{color:#f2c36e}.contact-phone-links svg{width:27px;height:27px;flex:0 0 27px;fill:currentColor}
+.floating-whatsapp{position:fixed;right:24px;bottom:24px;z-index:90;display:grid;place-items:center;width:60px;height:60px;border:3px solid #fff;border-radius:50%;background:#25d366;color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.28);transition:transform .2s ease,box-shadow .2s ease}.floating-whatsapp:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 11px 28px rgba(0,0,0,.34)}.floating-whatsapp:focus-visible{outline:3px solid #f2c36e;outline-offset:3px}.floating-whatsapp svg{width:34px;height:34px;fill:currentColor}@media(max-width:560px){.floating-whatsapp{right:15px;bottom:15px;width:54px;height:54px}.floating-whatsapp svg{width:30px;height:30px}}
 .price-item[open] summary{border-bottom:1px solid #dce5dc;background:#edf3eb}
 .price-detail{padding:10px 18px 14px}
 .price-detail>div{display:flex;justify-content:space-between;gap:20px;padding:9px 0;border-bottom:1px solid #e0e7df;font-size:14px}
