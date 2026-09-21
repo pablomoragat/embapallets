@@ -371,7 +371,32 @@
   .hero-layout-wide .real-product-item{
     display:grid !important;
     grid-template-columns:minmax(0,1.35fr) minmax(170px,.65fr) !important;
-    grid-template-rows:auto minmax(0,1fr) !important;
+
+    
+/* Prueba reversible: pilas de pallets como fondos ambientales */
+#productos > article.product-row:nth-of-type(-n+3){
+  padding:44px;
+  border-radius:28px;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+}
+#productos > article.product-row:nth-of-type(1){
+  background-image:linear-gradient(rgba(248,247,243,.90),rgba(248,247,243,.90)),url("../assets/images/hero-pallets-01.webp");
+}
+#productos > article.product-row:nth-of-type(2){
+  background-image:linear-gradient(rgba(248,247,243,.90),rgba(248,247,243,.90)),url("../assets/images/hero-pallets-02.webp");
+}
+#productos > article.product-row:nth-of-type(3){
+  background-image:linear-gradient(rgba(248,247,243,.90),rgba(248,247,243,.90)),url("../assets/images/hero-pallets-03.webp");
+}
+@media(max-width:700px){
+  #productos > article.product-row:nth-of-type(-n+3){
+    padding:24px;
+    background-blend-mode:screen;
+  }
+}
+grid-template-rows:auto minmax(0,1fr) !important;
     column-gap:10px !important;row-gap:7px !important;
   }
   .hero-layout-wide .real-product-name{
