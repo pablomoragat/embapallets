@@ -16,7 +16,7 @@ function dimension(g,a,b,text,offset=new THREE.Vector3()){
  const A=a.clone().add(offset),B=b.clone().add(offset);line(g,A,B);
  const dir=new THREE.Vector3().subVectors(B,A).normalize(),perp=new THREE.Vector3(-dir.z,0,dir.x).multiplyScalar(.22);
  line(g,A.clone().add(perp),A.clone().sub(perp));line(g,B.clone().add(perp),B.clone().sub(perp));
- const l=label(text,.68,'#f6d36b','#173b2b');l.position.copy(A.clone().add(B).multiplyScalar(.5));l.position.y+=.42;g.add(l)
+ const l=label(text,.92,'#f6d36b','#173b2b');l.position.copy(A.clone().add(B).multiplyScalar(.5));l.position.y+=.52;g.add(l)
 }
 function buildPallet(widthMM,lengthMM,numbered=false){
  const g=new THREE.Group(),W=widthMM/100,L=lengthMM/100,deckH=.22,deckW=1,topY=1.39;
