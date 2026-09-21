@@ -648,3 +648,6 @@
     flex:0 0 38px !important;
     min-height:38px !important;
     padding:5px !important;
+.brand-logo{display:block;width:210px;max-width:36vw;height:50px;object-fit:contain;object-position:left center}
+.matrix-heading-3d,.matrix-heading-3d strong,.matrix-heading-3d span{color:#fff}
+@media(max-width:560px){.brand-logo{width:170px;max-width:58vw;height:44px}}
