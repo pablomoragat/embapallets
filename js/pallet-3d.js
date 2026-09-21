@@ -19,15 +19,26 @@ function dimension(g,a,b,text,offset=new THREE.Vector3()){
  const l=label(text,.48,'#f6d36b','#173b2b');l.position.copy(A.clone().add(B).multiplyScalar(.5));l.position.y+=.35;g.add(l)
 }
 function buildPallet(widthMM,lengthMM,numbered=false){
- const g=new THREE.Group(),W=widthMM/100,L=lengthMM/100,deckH=.22,deckW=Math.min(1.25,W/8),topY=1.55;
+ const g=new THREE.Group(),W=widthMM/100,L=lengthMM/100,deckH=.22,deckW=1,topY=1.39;
  const deckCount=widthMM===800?6:7;
- for(let i=0;i<deckCount;i++){const z=-L/2+deckW/2+i*(L-deckW)/(deckCount-1);board(g,W,deckH,deckW,0,topY,z);if(numbered){const n=label(String(i+1),1.02);n.position.set(-W*.27,topY+.52,z);g.add(n)}}
- const runnerW=.65,runnerH=.26,runnerY=1.15;[-W/2+runnerW/2,0,W/2-runnerW/2].forEach(x=>board(g,runnerW,runnerH,L,x,runnerY,0,woodSide));
- const block=.7,blockH=.72,blockY=.66;[-W/2+block/2,0,W/2-block/2].forEach(x=>[-L/2+block/2,0,L/2-block/2].forEach(z=>board(g,block,blockH,block,x,blockY,z,darkWood)));
- const baseH=.2,baseY=.2;[-W/2+deckW/2,W/2-deckW/2].forEach(x=>board(g,deckW,baseH,L,x,baseY,0,woodSide));board(g,W,baseH,deckW,0,baseY,0,woodSide);
+ // Tablas de cubierta: recorren el largo del pallet y se distribuyen sobre su ancho.
+ for(let i=0;i<deckCount;i++){const x=-W/2+deckW/2+i*(W-deckW)/(deckCount-1);board(g,deckW,deckH,L,x,topY,0);if(numbered){const n=label(String(i+1),1.02);n.position.set(x,topY+.52,-L*.27);g.add(n)}}
+
+ // Tres yugos completos e identicos. Cada uno incluye una tabla superior,
+ // tres tacos y una tabla inferior, todos alineados en el ancho del pallet.
+ const yokeW=1,runnerH=.26,runnerY=1.15;
+ const block=yokeW,blockH=.72,blockY=.66;
+ const baseH=.2,baseY=.2;
+ const yokeZ=[-L/2+yokeW/2,0,L/2-yokeW/2];
+ const blockX=[-W/2+block/2,0,W/2-block/2];
+ yokeZ.forEach(z=>{
+  board(g,W,runnerH,yokeW,0,runnerY,z,woodSide);
+  blockX.forEach(x=>board(g,block,blockH,block,x,blockY,z,darkWood));
+  board(g,W,baseH,yokeW,0,baseY,z,woodSide);
+ });
  dimension(g,new THREE.Vector3(-W/2,topY+.25,-L/2),new THREE.Vector3(W/2,topY+.25,-L/2),widthMM+' mm',new THREE.Vector3(0,.65,-.55));
  dimension(g,new THREE.Vector3(W/2,topY+.25,-L/2),new THREE.Vector3(W/2,topY+.25,L/2),lengthMM+' mm',new THREE.Vector3(.65,.55,0));
- dimension(g,new THREE.Vector3(-W/2,topY+.25,-L/2),new THREE.Vector3(-W/2,topY+.25,-L/2+deckW),Math.round(deckW*100)+' mm tabla',new THREE.Vector3(-.7,1.15,0));
+ dimension(g,new THREE.Vector3(-W/2,topY+.25,-L/2),new THREE.Vector3(-W/2+deckW,topY+.25,-L/2),Math.round(deckW*100)+' mm tabla',new THREE.Vector3(0,1.15,-.7));
  return g
 }
 function init(el,index){
