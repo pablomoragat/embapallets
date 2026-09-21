@@ -45,7 +45,7 @@ function init(el,index){
  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(34,1,.1,100),renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
  renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.outputColorSpace=THREE.SRGBColorSpace;el.appendChild(renderer.domElement);
  scene.add(new THREE.HemisphereLight(0xfff3df,0x163b2b,2.2));const key=new THREE.DirectionalLight(0xffffff,3.4);key.position.set(6,10,8);key.castShadow=true;scene.add(key);
- const W=Number(el.dataset.palletWidth),L=Number(el.dataset.palletLength);const pallet=buildPallet(W,L,index===1);pallet.rotation.y=-.25;scene.add(pallet);
+ const W=Number(el.dataset.palletWidth),L=Number(el.dataset.palletLength);const pallet=buildPallet(W,L,true);pallet.rotation.y=-.25;scene.add(pallet);
  const floor=new THREE.Mesh(new THREE.CircleGeometry(9,64),new THREE.ShadowMaterial({color:0x000000,opacity:.18}));floor.rotation.x=-Math.PI/2;floor.position.y=.08;floor.receiveShadow=true;scene.add(floor);
  camera.position.set(10.2,7.6,12.2);const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.target.set(0,.9,0);controls.minDistance=7.5;controls.maxDistance=20;controls.maxPolarAngle=Math.PI/2.05;controls.autoRotate=true;controls.autoRotateSpeed=.55;controls.addEventListener('start',()=>controls.autoRotate=false);
  const resize=()=>{const r=el.getBoundingClientRect();renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.updateProjectionMatrix()};resize();new ResizeObserver(resize).observe(el);renderer.setAnimationLoop(()=>{controls.update();renderer.render(scene,camera)})
