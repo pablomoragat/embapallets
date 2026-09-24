@@ -1,0 +1,24 @@
+{
+  "moneda": "CLP",
+  "precios_incluyen_iva": false,
+  "productos": [
+    {
+      "id": "PAL-AM-1200X1000-1X4",
+      "tipo": "americano",
+      "ancho_mm": 1200,
+      "largo_mm": 1000,
+      "tabla": "1x4",
+      "precio_desde": 14700,
+      "descuento_desde_unidades": 100
+    },
+    {
+      "id": "PAL-EU-800X1200-1X4",
+      "tipo": "europeo",
+      "ancho_mm": 800,
+      "largo_mm": 1200,
+      "tabla": "1x4",
+      "precio_desde": 13400,
+      "descuento_desde_unidades": 100
+    }
+  ]
+}
