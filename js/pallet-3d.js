@@ -18,15 +18,14 @@ function dimension(g,a,b,text,offset=new THREE.Vector3()){
  line(g,A.clone().add(perp),A.clone().sub(perp));line(g,B.clone().add(perp),B.clone().sub(perp));
  const l=label(text,.92,'#f6d36b','#173b2b');l.position.copy(A.clone().add(B).multiplyScalar(.5));l.position.y+=.52;g.add(l)
 }
-function buildPallet(widthMM,lengthMM,numbered=false){
- const g=new THREE.Group(),W=widthMM/100,L=lengthMM/100,deckH=.22,deckW=1,topY=1.39;
- const deckCount=widthMM===800?6:7;
+function buildPallet(widthMM,lengthMM,deckCount,numbered=false){
+ const g=new THREE.Group(),W=widthMM/100,L=lengthMM/100,deckH=.22,deckW=.75,topY=1.39;
  // Tablas de cubierta: recorren el largo del pallet y se distribuyen sobre su ancho.
  for(let i=0;i<deckCount;i++){const x=-W/2+deckW/2+i*(W-deckW)/(deckCount-1);board(g,deckW,deckH,L,x,topY,0);if(numbered){const n=label(String(i+1),1.02);n.position.set(x,topY+.52,-L*.27);g.add(n)}}
 
  // Tres yugos completos e identicos. Cada uno incluye una tabla superior,
  // tres tacos y una tabla inferior, todos alineados en el ancho del pallet.
- const yokeW=1,runnerH=.26,runnerY=1.15;
+ const yokeW=.75,runnerH=.26,runnerY=1.15;
  const block=yokeW,blockH=.72,blockY=.66;
  const baseH=.2,baseY=.2;
  const yokeZ=[-L/2+yokeW/2,0,L/2-yokeW/2];
@@ -45,7 +44,7 @@ function init(el,index){
  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(34,1,.1,100),renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
  renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.outputColorSpace=THREE.SRGBColorSpace;el.appendChild(renderer.domElement);
  scene.add(new THREE.HemisphereLight(0xfff3df,0x163b2b,2.2));const key=new THREE.DirectionalLight(0xffffff,3.4);key.position.set(6,10,8);key.castShadow=true;scene.add(key);
- const W=Number(el.dataset.palletWidth),L=Number(el.dataset.palletLength);const pallet=buildPallet(W,L,true);pallet.rotation.y=-.25;scene.add(pallet);
+ const W=Number(el.dataset.palletWidth),L=Number(el.dataset.palletLength);const count=Number(el.dataset.deckCount);if(!Number.isInteger(count)||count<2)return;const pallet=buildPallet(W,L,count,true);pallet.rotation.y=-.25;scene.add(pallet);
  const floor=new THREE.Mesh(new THREE.CircleGeometry(9,64),new THREE.ShadowMaterial({color:0x000000,opacity:.18}));floor.rotation.x=-Math.PI/2;floor.position.y=.08;floor.receiveShadow=true;scene.add(floor);
  camera.position.set(10.2,7.6,12.2);const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.target.set(0,.9,0);controls.minDistance=7.5;controls.maxDistance=20;controls.maxPolarAngle=Math.PI/2.05;controls.autoRotate=true;controls.autoRotateSpeed=.55;controls.addEventListener('start',()=>controls.autoRotate=false);
  const resize=()=>{const r=el.getBoundingClientRect();renderer.setSize(r.width,r.height,false);camera.aspect=r.width/r.height;camera.updateProjectionMatrix()};resize();new ResizeObserver(resize).observe(el);renderer.setAnimationLoop(()=>{controls.update();renderer.render(scene,camera)})
