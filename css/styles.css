@@ -683,3 +683,10 @@ grid-template-rows:auto minmax(0,1fr) !important;
     background-blend-mode:screen;
   }
 }
+
+.floating-whatsapp-wrap{position:fixed;right:max(24px,env(safe-area-inset-right));bottom:max(24px,env(safe-area-inset-bottom));z-index:90;display:flex;align-items:flex-end;gap:12px;max-width:calc(100vw - 36px)}
+.floating-whatsapp-wrap .floating-whatsapp{position:static;flex:0 0 60px}
+.floating-whatsapp-prompt{position:relative;max-width:245px;padding:13px 34px 13px 15px;border:1px solid #dce5dc;border-radius:14px;background:#fff;color:var(--ink);font-size:14px;font-weight:700;line-height:1.4;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.floating-whatsapp-prompt[hidden]{display:none}
+.floating-whatsapp-close{position:absolute;top:3px;right:5px;border:0;background:transparent;color:var(--muted);font-size:23px;line-height:1;padding:4px;cursor:pointer}
+@media(max-width:560px){.floating-whatsapp-wrap{right:max(15px,env(safe-area-inset-right));bottom:max(15px,env(safe-area-inset-bottom))}.floating-whatsapp-wrap .floating-whatsapp{flex-basis:54px}.floating-whatsapp-prompt{max-width:min(235px,calc(100vw - 105px));font-size:13px}}
