@@ -38,6 +38,11 @@ function buildPallet(widthMM,lengthMM,deckCount,numbered=false){
  dimension(g,new THREE.Vector3(-W/2,topY+.25,-L/2),new THREE.Vector3(W/2,topY+.25,-L/2),widthMM+' mm',new THREE.Vector3(0,.65,-.55));
  dimension(g,new THREE.Vector3(W/2,topY+.25,-L/2),new THREE.Vector3(W/2,topY+.25,L/2),lengthMM+' mm',new THREE.Vector3(.65,.55,0));
  dimension(g,new THREE.Vector3(-W/2,topY+.25,-L/2),new THREE.Vector3(-W/2+deckW,topY+.25,-L/2),Math.round(deckW*100)+' mm tabla',new THREE.Vector3(0,1.15,-.7));
+ // Cota entre los bordes de las dos primeras tablas en la cara opuesta.
+ const step=(W-deckW)/(deckCount-1);
+ const gapMM=(step-deckW)*100;
+ const gapText=new Intl.NumberFormat('es-CL',{maximumFractionDigits:1}).format(gapMM)+' mm';
+ dimension(g,new THREE.Vector3(-W/2+deckW,topY+.25,L/2),new THREE.Vector3(-W/2+step,topY+.25,L/2),gapText,new THREE.Vector3(0,1.15,.7));
  return g
 }
 function init(el,index){
