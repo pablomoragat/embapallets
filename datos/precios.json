@@ -3,22 +3,24 @@
   "precios_incluyen_iva": false,
   "productos": [
     {
-      "id": "PAL-AM-1200X1000-1X4",
+      "id": "PAL-AM-1200X1000-1X3",
       "tipo": "americano",
       "ancho_mm": 1200,
       "largo_mm": 1000,
-      "tabla": "1x4",
-      "precio_desde": 14700,
-      "descuento_desde_unidades": 100
+      "tabla": "1x3",
+      "precio_desde": 13400,
+      "descuento_desde_unidades": 100,
+      "tablas_superiores": 9
     },
     {
-      "id": "PAL-EU-800X1200-1X4",
+      "id": "PAL-EU-800X1200-1X3",
       "tipo": "europeo",
       "ancho_mm": 800,
       "largo_mm": 1200,
-      "tabla": "1x4",
-      "precio_desde": 13400,
-      "descuento_desde_unidades": 100
+      "tabla": "1x3",
+      "precio_desde": 11400,
+      "descuento_desde_unidades": 100,
+      "tablas_superiores": 7
     }
   ]
 }
