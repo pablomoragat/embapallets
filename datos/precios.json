@@ -8,7 +8,6 @@
       "ancho_mm": 1200,
       "largo_mm": 1000,
       "tabla": "1x3",
-      "precio_desde": 13400,
       "descuento_desde_unidades": 100,
       "tablas_superiores": 9
     },
@@ -18,9 +17,9 @@
       "ancho_mm": 800,
       "largo_mm": 1200,
       "tabla": "1x3",
-      "precio_desde": 11400,
       "descuento_desde_unidades": 100,
       "tablas_superiores": 7
     }
-  ]
+  ],
+  "publicar_precios": false
 }
