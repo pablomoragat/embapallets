@@ -690,3 +690,35 @@ grid-template-rows:auto minmax(0,1fr) !important;
 .floating-whatsapp-prompt[hidden]{display:none}
 .floating-whatsapp-close{position:absolute;top:3px;right:5px;border:0;background:transparent;color:var(--muted);font-size:23px;line-height:1;padding:4px;cursor:pointer}
 @media(max-width:560px){.floating-whatsapp-wrap{right:max(15px,env(safe-area-inset-right));bottom:max(15px,env(safe-area-inset-bottom))}.floating-whatsapp-wrap .floating-whatsapp{flex-basis:54px}.floating-whatsapp-prompt{max-width:min(235px,calc(100vw - 105px));font-size:13px}}
+
+
+/* Formulario de cotizacion: campos estructurados y casilla NIMF 15 */
+.contact-form .quote-check{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  padding:15px 16px;
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:6px;
+  font-size:14px;
+  line-height:1.45;
+  cursor:pointer;
+}
+.contact-form .quote-check input[type="checkbox"]{
+  display:inline-block;
+  flex:0 0 20px;
+  width:20px;
+  height:20px;
+  margin:0;
+  padding:0;
+  border:0;
+  accent-color:var(--orange);
+}
+.contact-form .quote-hint{
+  margin:-9px 0 0;
+  font-size:12px;
+  line-height:1.5;
+  color:#d4e3d9;
+}
+.contact-form [hidden]{display:none!important}
