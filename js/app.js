@@ -18,3 +18,11 @@ if(quoteDimensions&&customDimensionsField&&customDimensionsInput){
   quoteDimensions.addEventListener('change',syncCustomDimensions);
   syncCustomDimensions();
 }
+
+// El botón de cotizar del hero preselecciona el nuevo producto.
+document.querySelectorAll('[data-quote-product]').forEach(link=>{
+  link.addEventListener('click',()=>{
+    const productSelect=document.querySelector('#quote-form select[name="producto"]');
+    if(productSelect) productSelect.value=link.dataset.quoteProduct;
+  });
+});
