@@ -793,3 +793,27 @@ grid-template-rows:auto minmax(0,1fr) !important;
 .hero-carousel-controls .hero-carousel-dot{width:13px;height:13px}
 @media(max-width:1050px){.hero-offer-grid{grid-template-columns:1fr}.hero-offer-slide{padding-top:120px}.hero-offer-visual{max-width:760px;width:100%;margin:auto}.hero-offer-copy{max-width:800px}}
 @media(max-width:560px){.hero-offer-slide{padding:95px 0 80px;min-height:auto}.hero-offer-copy h2{font-size:clamp(39px,10vw,57px)}.hero-offer-price{padding:11px 14px}.hero-offer-price strong{font-size:51px}.hero-offer-actions{align-items:stretch;gap:10px}.hero-offer-cta{width:100%}.hero-offer-visual{margin-top:12px}.hero-offer-visual figcaption{line-height:1.45}.hero-carousel-prev{left:5px}.hero-carousel-next{right:5px}.hero-carousel-controls .hero-carousel-arrow{width:35px;height:35px;font-size:26px}}
+
+
+/* Lámina del Euro Pallet: imagen publicitaria, completa, y resumen accesible en móviles */
+.hero-euro-slide{
+  min-height:650px;
+  padding:110px 16px 36px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(112deg,#fff 0%,#fafaf7 48%,#edf1eb 100%);
+}
+.hero-euro-banner{display:block;width:min(100%,1180px);margin:0 auto;border-radius:12px;overflow:hidden}
+.hero-euro-banner img{display:block;width:100%;height:auto}
+.hero-euro-banner:focus-visible{outline:3px solid #e8781a;outline-offset:4px}
+.hero-euro-mobile-summary{display:none}
+@media(max-width:560px){
+  .hero-euro-slide{min-height:420px;padding:97px 10px 66px;justify-content:flex-start}
+  .hero-euro-banner{border-radius:6px}
+  .hero-euro-mobile-summary{display:flex;flex-direction:column;align-items:flex-start;gap:9px;width:100%;max-width:360px;margin:12px auto 0;color:#104b33}
+  .hero-euro-mobile-summary strong{font-size:20px;line-height:1.2}
+  .hero-euro-mobile-summary span{font-size:14px}
+  .hero-euro-mobile-summary .button{margin-top:4px;width:100%;text-align:center}
+}
