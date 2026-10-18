@@ -760,3 +760,36 @@ grid-template-rows:auto minmax(0,1fr) !important;
 .hero-carousel-dot{width:12px;height:12px;border:1px solid #53755d;border-radius:50%;padding:0;background:transparent;cursor:pointer}
 .hero-carousel-dot[aria-current="true"]{background:#216d39}
 .hero-carousel-controls button:focus-visible{outline:3px solid #df8a28;outline-offset:3px}
+
+/* Segunda diapositiva: medio pallet. Textos HTML reales y flechas únicas. */
+.hero-offer-slide{min-height:650px;padding:clamp(120px,10vw,155px) 0 95px;background:linear-gradient(112deg,#fff 0%,#fafaf7 48%,#edf1eb 100%);color:#123b2d}
+.hero-offer-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:16px;align-items:center}
+.hero-offer-copy{position:relative;z-index:1}
+.hero-offer-label{display:inline-block;margin:0 0 17px;border-radius:5px;background:#ec821b;padding:8px 17px;color:#fff;font-size:14px;font-weight:900;letter-spacing:.055em}
+.hero-offer-copy h2{margin:0;color:#064735;font-size:clamp(46px,4.7vw,76px);line-height:1.03;letter-spacing:-.055em;font-weight:900}
+.hero-offer-copy h2 span{display:block;color:#343a38;font-size:.65em;letter-spacing:-.04em;margin-top:5px}
+.hero-offer-stock{font-size:clamp(19px,2.15vw,28px);font-weight:800;margin:18px 0 12px}
+.hero-offer-stock strong{color:#df7113}
+.hero-offer-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;width:fit-content;max-width:100%;border-radius:11px;background:linear-gradient(100deg,#f98a17,#e76a17);padding:12px 19px;color:#fff;margin:0 0 18px;box-shadow:0 9px 18px rgba(138,73,24,.14)}
+.hero-offer-price strong{font-size:clamp(48px,5vw,75px);line-height:1;font-weight:900;letter-spacing:-.06em}
+.hero-offer-price span{font-size:clamp(17px,1.7vw,22px);font-weight:800}
+.hero-offer-lead{font-size:clamp(16px,1.7vw,21px);margin:0 0 22px;color:#34493e}
+.hero-offer-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
+.hero-offer-cta{background:#176638;color:#fff;border-radius:8px;font-size:17px}
+.hero-offer-cta:hover{background:#0c4d29}
+.hero-offer-actions>span{font-weight:800;color:#e17116}
+.hero-offer-fineprint{font-size:12px;color:#61736a;margin:17px 0 0}
+.hero-offer-visual{margin:0;min-width:0}
+.hero-offer-visual img{width:100%;height:auto;display:block;filter:drop-shadow(0 8px 18px rgba(50,66,45,.08))}
+.hero-offer-visual figcaption{text-align:center;color:#245238;font-size:clamp(12px,1.2vw,15px);font-weight:600}
+.hero-offer-visual figcaption strong{color:#ad6124}
+.hero-carousel{isolation:isolate}
+.hero-carousel-controls:not([hidden]){position:absolute;inset:0;z-index:5;display:block;background:transparent;padding:0;pointer-events:none}
+.hero-carousel-controls .hero-carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);pointer-events:auto;width:45px;height:45px;border:1px solid rgba(255,255,255,.7);background:rgba(24,59,43,.85);color:#fff;box-shadow:0 5px 18px rgba(0,0,0,.14)}
+.hero-carousel-controls .hero-carousel-arrow:hover{background:#146a38;border-color:white}
+.hero-carousel-prev{left:12px}
+.hero-carousel-next{right:12px}
+.hero-carousel-controls .hero-carousel-dots{position:absolute;bottom:17px;left:50%;transform:translateX(-50%);display:flex;gap:12px;pointer-events:auto;border-radius:999px;padding:9px 13px;background:rgba(255,255,255,.86);box-shadow:0 3px 16px rgba(0,0,0,.07)}
+.hero-carousel-controls .hero-carousel-dot{width:13px;height:13px}
+@media(max-width:1050px){.hero-offer-grid{grid-template-columns:1fr}.hero-offer-slide{padding-top:120px}.hero-offer-visual{max-width:760px;width:100%;margin:auto}.hero-offer-copy{max-width:800px}}
+@media(max-width:560px){.hero-offer-slide{padding:95px 0 80px;min-height:auto}.hero-offer-copy h2{font-size:clamp(39px,10vw,57px)}.hero-offer-price{padding:11px 14px}.hero-offer-price strong{font-size:51px}.hero-offer-actions{align-items:stretch;gap:10px}.hero-offer-cta{width:100%}.hero-offer-visual{margin-top:12px}.hero-offer-visual figcaption{line-height:1.45}.hero-carousel-prev{left:5px}.hero-carousel-next{right:5px}.hero-carousel-controls .hero-carousel-arrow{width:35px;height:35px;font-size:26px}}
