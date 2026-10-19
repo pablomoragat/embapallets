@@ -3,30 +3,18 @@ const year=document.querySelector('#year');if(year)year.textContent=new Date().g
 const sent=new URLSearchParams(window.location.search).get('enviado');if(sent==='1'){alert('Tu solicitud fue enviada correctamente. Nos pondremos en contacto contigo.');window.history.replaceState({},document.title,window.location.pathname+'#contacto')}
 
 
-// Solicitar dimensiones solo cuando el cliente elige "Otra medida".
-const quoteDimensions=document.querySelector('#quote-dimensions');
-const customDimensionsField=document.querySelector('#quote-custom-dimensions-field');
-const customDimensionsInput=document.querySelector('#quote-custom-dimensions');
-if(quoteDimensions&&customDimensionsField&&customDimensionsInput){
-  const syncCustomDimensions=()=>{
-    const isOther=quoteDimensions.value==='otra';
-    customDimensionsField.hidden=!isOther;
-    customDimensionsInput.disabled=!isOther;
-    customDimensionsInput.required=isOther;
-    if(!isOther)customDimensionsInput.value='';
-  };
-  quoteDimensions.addEventListener('change',syncCustomDimensions);
-  syncCustomDimensions();
-}
-
-// El botón de cotizar del hero preselecciona el nuevo producto.
+// La cotización usa un mensaje editable. Los CTA de cada producto
+// pueden completar el tipo de pallet sin borrar las demás respuestas.
+const quoteMessage=document.querySelector('#quote-form textarea[name="mensaje"]');
 document.querySelectorAll('[data-quote-product]').forEach(link=>{
   link.addEventListener('click',()=>{
-    const productSelect=document.querySelector('#quote-form select[name="producto"]');
-    if(productSelect) productSelect.value=link.dataset.quoteProduct;
+    if(!quoteMessage) return;
+    const defaultType='Tipo de pallet: nuevo / indicar otro: ____';
+    if(quoteMessage.value.includes(defaultType)){
+      quoteMessage.value=quoteMessage.value.replace(defaultType,'Tipo de pallet: '+link.dataset.quoteProduct);
+    }
   });
 });
-
 
 // Carrusel del Hero: avanza cada 6 segundos y se detiene definitivamente
 // ante el primer clic, toque o interacción de teclado. Las flechas siguen disponibles.
@@ -84,14 +72,11 @@ if(heroCarousel){
   }
 }
 
-// Registro PALLET TRIMAX: ambos CTA son interactivos y preseleccionan su propósito.
+// Formulario de información TRIMAX, accesible desde un único CTA.
 const trimaxForm=document.querySelector('#trimax-form');
-document.querySelectorAll('[data-trimax-interest]').forEach(link=>{
+document.querySelectorAll('[data-trimax-more]').forEach(link=>{
   link.addEventListener('click',()=>{
-    const type=link.getAttribute('data-trimax-interest');
-    const option=trimaxForm?.querySelector('input[name="interes"][value="'+type+'"]');
-    if(option) option.checked=true;
-    if(typeof window.gtag==='function') window.gtag('event','trimax_interes_click',{tipo_interes:type});
+    if(typeof window.gtag==='function') window.gtag('event','trimax_interes_click',{tipo_interes:'informacion'});
   });
 });
 if(new URLSearchParams(window.location.search).get('registro')==='1'){
@@ -101,7 +86,6 @@ if(new URLSearchParams(window.location.search).get('registro')==='1'){
 }
 if(trimaxForm){
   trimaxForm.addEventListener('submit',()=>{
-    const choice=trimaxForm.querySelector('input[name="interes"]:checked')?.value||'sin_seleccion';
-    if(typeof window.gtag==='function')window.gtag('event','trimax_registro_enviado',{tipo_interes:choice});
+    if(typeof window.gtag==='function')window.gtag('event','trimax_registro_enviado',{tipo_interes:'informacion'});
   });
 }
