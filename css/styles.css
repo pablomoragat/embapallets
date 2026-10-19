@@ -820,18 +820,18 @@ grid-template-rows:auto minmax(0,1fr) !important;
 
 
 /* Lanzamiento TRIMAX - visual principal independiente, sin alterar el resto del carrusel */
-.hero-trimax-slide{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 86% 12%,rgba(167,126,57,.23),transparent 41%),linear-gradient(117deg,#001e17 0%,#092b24 48%,#020c0b 100%);color:#f9f5ec;padding:clamp(132px,11vw,170px) 0 76px;min-height:690px}
-.hero-trimax-slide::after{content:"";pointer-events:none;position:absolute;inset:auto 0 0;height:4px;background:linear-gradient(90deg,transparent,#b98538,#f0d59a,#b98538,transparent);opacity:.7}
+.hero-trimax-slide{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(120deg,#f5f7f5 0%,#e8eeea 100%);color:#193d2d;padding:clamp(132px,11vw,170px) 0 76px;min-height:690px}
+.hero-trimax-slide::after{content:none}
 .trimax-hero-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(20px,4vw,62px);align-items:center}
 .trimax-hero-copy{position:relative;z-index:1}
-.trimax-eyebrow{font-size:12px;font-weight:800;letter-spacing:.24em;color:#ecc98b;margin:0 0 16px}
-.trimax-hero-copy h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(50px,6.25vw,102px);font-weight:500;letter-spacing:-.045em;line-height:.98;color:#fff1d1;margin:0 0 18px;white-space:nowrap}
-.trimax-hero-copy h1 span{display:inline-block;color:#e7b767;text-shadow:0 2px 20px rgba(232,170,62,.21)}
-.trimax-headline{font-family:Georgia,'Times New Roman',serif;color:#f6eee1;font-size:clamp(22px,2vw,34px);line-height:1.22;max-width:690px;margin:0 0 24px}
+.trimax-eyebrow{font-size:12px;font-weight:800;letter-spacing:.18em;color:#416658;margin:0 0 16px}
+.trimax-hero-copy h1{font-family:Arial,Helvetica,sans-serif;font-size:clamp(48px,6vw,92px);font-weight:800;letter-spacing:-.045em;line-height:1.03;color:#203a30;margin:0 0 18px;white-space:nowrap}
+.trimax-hero-copy h1 span{display:inline-block;color:#126243;text-shadow:none}
+.trimax-headline{font-family:Arial,Helvetica,sans-serif;color:#486157;font-size:clamp(22px,2vw,32px);line-height:1.33;max-width:690px;margin:0 0 24px}
 .trimax-benefits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 24px}
-.trimax-benefits>div{border:1px solid rgba(214,180,111,.39);border-radius:12px;background:rgba(4,28,24,.8);padding:14px 12px;min-height:112px}
-.trimax-benefits strong{display:block;color:#eac07a;font-size:14px;letter-spacing:.04em;margin-bottom:6px}
-.trimax-benefits span{display:block;color:#edf0e8;font-size:13px;line-height:1.45}
+.trimax-benefits>div{border:1px solid #d5dfda;border-radius:12px;background:#fff;padding:14px 12px;min-height:112px}
+.trimax-benefits strong{display:block;color:#1f4637;font-size:14px;letter-spacing:.04em;margin-bottom:6px}
+.trimax-benefits span{display:block;color:#52635b;font-size:13px;line-height:1.45}
 .trimax-ctas{display:flex;gap:12px;flex-wrap:wrap}
 .trimax-button{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:51px;padding:12px 19px;text-align:center;text-decoration:none;border-radius:999px;font-size:15px;line-height:1.25;font-weight:800;transition:transform .15s,background .15s;cursor:pointer}
 .trimax-button:hover{transform:translateY(-2px)}
@@ -840,8 +840,12 @@ grid-template-rows:auto minmax(0,1fr) !important;
 .trimax-outline:hover{background:rgba(243,196,118,.11)}
 .trimax-gold{color:#182216;background:linear-gradient(115deg,#ffe5a7,#d99e4f);border:1px solid #fae1aa;box-shadow:0 5px 22px rgba(201,147,71,.14)}
 .trimax-gold:hover{background:linear-gradient(115deg,#fff0bf,#e0ad63)}
-.trimax-preferred{color:#e6e3d8;font-size:12px;line-height:1.5;max-width:630px;margin:16px 0 0}
-.trimax-visual{position:relative;min-width:0;margin:0;isolation:isolate;overflow:hidden;border:1px solid rgba(233,177,91,.26);border-radius:16px;background:#162c27;box-shadow:0 18px 80px rgba(0,0,0,.32)}
+/* Botón sobrio solo para el carrusel TriMax; no altera el formulario. */
+.hero-trimax-slide .trimax-gold{background:#16543b;border:1px solid #16543b;color:#fff;border-radius:8px;box-shadow:0 5px 18px rgba(22,84,59,.12)}
+.hero-trimax-slide .trimax-gold:hover{background:#0d402c;border-color:#0d402c}
+.hero-trimax-slide .trimax-button:focus-visible{outline-color:#16543b}
+.trimax-preferred{color:#68776e;font-size:12px;line-height:1.5;max-width:630px;margin:16px 0 0}
+.trimax-visual{position:relative;min-width:0;margin:0;isolation:isolate;overflow:hidden;border:1px solid #d7dfda;border-radius:12px;background:#e3e9e5;box-shadow:0 17px 28px rgba(22,48,36,.12)}
 .trimax-visual img{display:block;width:100%;height:min(550px,38vw);min-height:390px;object-fit:cover;object-position:center}
 .trimax-visual figcaption{position:absolute;bottom:0;right:0;left:0;padding:21px 16px 13px;color:#f7f0e0;text-align:center;font-size:12px;background:linear-gradient(transparent,rgba(0,14,10,.87))}
 .trimax-register-section{scroll-margin-top:85px;background:#f5f3ec;border-top:1px solid #ded0af;padding:78px 0}
