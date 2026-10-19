@@ -83,3 +83,25 @@ if(heroCarousel){
     }
   }
 }
+
+// Registro PALLET TRIMAX: ambos CTA son interactivos y preseleccionan su propósito.
+const trimaxForm=document.querySelector('#trimax-form');
+document.querySelectorAll('[data-trimax-interest]').forEach(link=>{
+  link.addEventListener('click',()=>{
+    const type=link.getAttribute('data-trimax-interest');
+    const option=trimaxForm?.querySelector('input[name="interes"][value="'+type+'"]');
+    if(option) option.checked=true;
+    if(typeof window.gtag==='function') window.gtag('event','trimax_interes_click',{tipo_interes:type});
+  });
+});
+if(new URLSearchParams(window.location.search).get('registro')==='1'){
+  const message=document.querySelector('#trimax-form-success');
+  if(message) message.hidden=false;
+  window.history.replaceState({},document.title,window.location.pathname+'#trimax-registro');
+}
+if(trimaxForm){
+  trimaxForm.addEventListener('submit',()=>{
+    const choice=trimaxForm.querySelector('input[name="interes"]:checked')?.value||'sin_seleccion';
+    if(typeof window.gtag==='function')window.gtag('event','trimax_registro_enviado',{tipo_interes:choice});
+  });
+}
