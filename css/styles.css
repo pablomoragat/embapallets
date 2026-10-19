@@ -785,7 +785,7 @@ grid-template-rows:auto minmax(0,1fr) !important;
 .hero-offer-visual figcaption strong{color:#ad6124}
 .hero-carousel{isolation:isolate}
 .hero-carousel-controls:not([hidden]){position:absolute;inset:0;z-index:5;display:block;background:transparent;padding:0;pointer-events:none}
-.hero-carousel-controls .hero-carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);pointer-events:auto;width:45px;height:45px;border:1px solid rgba(255,255,255,.7);background:rgba(24,59,43,.85);color:#fff;box-shadow:0 5px 18px rgba(0,0,0,.14)}
+.hero-carousel-controls .hero-carousel-arrow{position:absolute;top:clamp(295px,25vw,350px);transform:translateY(-50%);pointer-events:auto;width:45px;height:45px;border:1px solid rgba(255,255,255,.7);background:rgba(24,59,43,.85);color:#fff;box-shadow:0 5px 18px rgba(0,0,0,.14)}
 .hero-carousel-controls .hero-carousel-arrow:hover{background:#146a38;border-color:white}
 .hero-carousel-prev{left:12px}
 .hero-carousel-next{right:12px}
@@ -866,3 +866,8 @@ grid-template-rows:auto minmax(0,1fr) !important;
 .trimax-form-success{background:#e8f4ea;padding:14px;border-radius:8px;color:#1b6136;font-weight:750;margin:0}
 @media(max-width:1080px){.trimax-hero-grid{grid-template-columns:1fr}.hero-trimax-slide{padding:125px 0 75px}.trimax-visual{max-width:710px;width:100%;margin:0 auto}.trimax-visual img{height:400px;min-height:0}.trimax-register-grid{grid-template-columns:1fr}}
 @media(max-width:680px){.hero-trimax-slide{padding:92px 0 65px;min-height:auto}.trimax-hero-copy h1{font-size:clamp(42px,11vw,68px)}.trimax-headline{font-size:24px}.trimax-benefits{grid-template-columns:1fr;gap:8px}.trimax-benefits>div{min-height:auto;padding:12px 14px}.trimax-benefits strong{margin-bottom:3px}.trimax-ctas{flex-direction:column}.trimax-button{width:100%}.trimax-visual img{height:310px}.trimax-register-section{padding:48px 0}.trimax-register-form{padding:18px}.trimax-fields{grid-template-columns:1fr}.trimax-fields-wide{grid-column:auto}}
+
+/* Flechas a una altura fija desde la parte superior del carrusel.
+   La posición no cambia cuando las diapositivas tienen alturas diferentes. */
+@media(max-width:1050px){.hero-carousel-controls .hero-carousel-arrow{top:285px}}
+@media(max-width:560px){.hero-carousel-controls .hero-carousel-arrow{top:225px}}
