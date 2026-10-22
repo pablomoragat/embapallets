@@ -20,7 +20,8 @@ document.querySelectorAll('[data-quote-product]').forEach(link=>{
 // ante el primer clic, toque o interacción de teclado. Las flechas siguen disponibles.
 const heroCarousel=document.querySelector('[data-hero-carousel]');
 if(heroCarousel){
-  const slides=Array.from(heroCarousel.querySelectorAll('[data-hero-slide]'));
+  // Las láminas con data-hero-disabled permanecen guardadas, pero no participan en la rotación.
+  const slides=Array.from(heroCarousel.querySelectorAll('[data-hero-slide]:not([data-hero-disabled])'));
   const controls=heroCarousel.querySelector('.hero-carousel-controls');
   if(slides.length>1&&controls){
     const dotsContainer=controls.querySelector('.hero-carousel-dots');
