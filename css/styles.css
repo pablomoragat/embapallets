@@ -876,3 +876,25 @@ grid-template-rows:auto minmax(0,1fr) !important;
    La posición no cambia cuando las diapositivas tienen alturas diferentes. */
 @media(max-width:1050px){.hero-carousel-controls .hero-carousel-arrow{top:285px}}
 @media(max-width:560px){.hero-carousel-controls .hero-carousel-arrow{top:225px}}
+
+
+/* Carrusel de atributos: mensajes idénticos a la franja inferior trust-strip. */
+.hero-values-slide{position:relative;isolation:isolate;overflow:hidden;min-height:690px;padding:clamp(132px,11vw,165px) 0 80px;color:#fff;background:radial-gradient(ellipse at 88% 20%,#2e5942 0%,transparent 44%),linear-gradient(120deg,#123729 0%,#1e4534 100%)}
+.hero-values-layout{display:grid;grid-template-columns:minmax(0,1.03fr) minmax(0,.97fr);gap:clamp(28px,5vw,66px);align-items:center}
+.hero-values-copy{position:relative;z-index:1}
+.hero-values-eyebrow{margin:0 0 21px;color:#f2bd72;font-size:12px;font-weight:850;letter-spacing:.15em}
+.hero-values-copy h1{max-width:660px;margin:0;color:#fff;font-size:clamp(37px,4.25vw,63px);line-height:1.09;letter-spacing:-.035em;font-weight:850}
+.hero-values-copy h1 span{color:#efc78b}
+.hero-values-intro{max-width:610px;margin:23px 0 28px;color:#e2ebe5;font-size:clamp(17px,1.7vw,21px);line-height:1.55}
+.hero-values-cta{display:inline-flex;align-items:center;justify-content:center;gap:15px;min-height:53px;padding:12px 22px;border-radius:8px;background:#df8a28;color:#15291e;text-decoration:none;font-size:16px;font-weight:850;transition:background .18s ease}
+.hero-values-cta:hover{background:#f2b05e}
+.hero-values-cta:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.hero-values-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.hero-values-card{min-width:0;min-height:172px;padding:22px;border:1px solid rgba(235,247,237,.18);border-radius:13px;background:rgba(250,255,250,.085);box-shadow:0 8px 20px rgba(0,18,8,.09)}
+.hero-values-icon{display:inline-flex;color:#f2be74;width:30px;height:30px;margin-bottom:9px}
+.hero-values-icon svg{display:block;width:100%;height:100%}
+.hero-values-card h2{margin:0 0 6px;color:#fff;font-size:19px;line-height:1.2;font-weight:780;letter-spacing:normal}
+.hero-values-card p{margin:0;color:#e0eae2;font-size:13px;line-height:1.48}
+@media(max-width:940px){.hero-values-layout{grid-template-columns:1fr;gap:27px}.hero-values-slide{padding:116px 0 64px;min-height:auto}.hero-values-cards{max-width:780px}.hero-values-card{min-height:145px}}
+@media(max-width:560px){.hero-values-slide{padding:96px 0 62px}.hero-values-copy h1{font-size:clamp(32px,8.6vw,47px)}.hero-values-intro{margin:18px 0 23px;font-size:16px}.hero-values-cta{width:100%}.hero-values-cards{gap:9px}.hero-values-card{padding:13px 12px;min-height:156px}.hero-values-card h2{font-size:16px}.hero-values-card p{font-size:12px}.hero-values-icon{width:26px;height:26px;margin-bottom:7px}}
+@media(max-width:350px){.hero-values-cards{grid-template-columns:1fr}.hero-values-card{min-height:auto}}
