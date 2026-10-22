@@ -898,3 +898,54 @@ grid-template-rows:auto minmax(0,1fr) !important;
 @media(max-width:940px){.hero-values-layout{grid-template-columns:1fr;gap:27px}.hero-values-slide{padding:116px 0 64px;min-height:auto}.hero-values-cards{max-width:780px}.hero-values-card{min-height:145px}}
 @media(max-width:560px){.hero-values-slide{padding:96px 0 62px}.hero-values-copy h1{font-size:clamp(32px,8.6vw,47px)}.hero-values-intro{margin:18px 0 23px;font-size:16px}.hero-values-cta{width:100%}.hero-values-cards{gap:9px}.hero-values-card{padding:13px 12px;min-height:156px}.hero-values-card h2{font-size:16px}.hero-values-card p{font-size:12px}.hero-values-icon{width:26px;height:26px;margin-bottom:7px}}
 @media(max-width:350px){.hero-values-cards{grid-template-columns:1fr}.hero-values-card{min-height:auto}}
+
+
+/* Primera lámina de cotización: dos canales, WhatsApp y formulario existente. */
+.hero-quote-slide{
+  position:relative;min-height:690px;padding:clamp(132px,11vw,165px) 0 90px;
+  color:#fff;background:radial-gradient(ellipse at 90% 12%,#306247 0%,transparent 48%),linear-gradient(120deg,#123729 0%,#214a37 100%);
+}
+.hero-quote-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.89fr);gap:clamp(28px,6vw,76px);align-items:center}
+.hero-quote-copy{min-width:0}
+.hero-quote-eyebrow{margin:0 0 23px;font-size:12px;font-weight:850;letter-spacing:.15em;color:#f2c47b}
+.hero-quote-copy h1{margin:0;max-width:650px;font-size:clamp(43px,5.1vw,72px);line-height:1.08;letter-spacing:-.04em;font-weight:850;color:#fff}
+.hero-quote-copy h1 span{display:block;color:#f2c47b}
+.hero-quote-lead{max-width:550px;margin:24px 0 23px;font-size:clamp(17px,1.7vw,21px);line-height:1.6;color:#e1eae4}
+.hero-quote-benefits{margin:0;display:flex;flex-wrap:wrap;gap:8px 17px;font-size:13px;font-weight:750;color:#dce9df}
+.hero-quote-benefits span::before{content:"✓";margin-right:8px;color:#f2c47b}
+.hero-quote-panel{min-width:0;background:#fff;color:#183b2b;padding:clamp(20px,3vw,35px);border-radius:17px;box-shadow:0 21px 53px rgba(0,23,11,.22)}
+.hero-quote-panel-title{font-size:clamp(21px,2vw,27px);font-weight:850;line-height:1.25;margin:0 0 7px}
+.hero-quote-panel-lead{font-size:14px;color:#5a6b61;margin:0 0 23px;line-height:1.5}
+.hero-quote-option{display:flex;align-items:center;gap:15px;min-height:93px;padding:17px 18px;text-decoration:none;border:1px solid #d6e2da;border-radius:12px;background:#f8faf8;transition:border-color .18s,background .18s,transform .18s}
+.hero-quote-option+.hero-quote-option{margin-top:12px}
+.hero-quote-option:hover{background:#edf5ed;border-color:#7fa78a;transform:translateY(-2px)}
+.hero-quote-option:focus-visible{outline:3px solid #df8a28;outline-offset:3px}
+.hero-quote-icon{display:grid;place-items:center;width:46px;height:46px;flex:0 0 46px;border-radius:12px;color:#fff;background:#1d8050}
+.hero-quote-form-option .hero-quote-icon{background:#274d3b}
+.hero-quote-icon svg{display:block;width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.hero-quote-option-copy{display:block;flex:1;min-width:0}
+.hero-quote-option-copy strong{display:block;font-size:16px;line-height:1.33;color:#163d2b}
+.hero-quote-option-copy small{display:block;margin-top:4px;font-size:13px;line-height:1.4;color:#597066}
+.hero-quote-arrow{font-size:24px;line-height:1;color:#336c4b}
+.hero-quote-note{font-size:12px;color:#65756a;margin:17px 0 0;text-align:center}
+#quote-form{scroll-margin-top:95px}
+@media(max-width:940px){
+  .hero-quote-slide{min-height:auto;padding:115px 0 92px}
+  .hero-quote-layout{grid-template-columns:1fr;gap:27px}
+  .hero-quote-panel{max-width:750px;width:100%}
+}
+@media(max-width:560px){
+  .hero-quote-slide{padding:101px 0 84px}
+  .hero-quote-eyebrow{font-size:10px;margin-bottom:13px}
+  .hero-quote-copy h1{font-size:clamp(36px,9.2vw,49px)}
+  .hero-quote-lead{font-size:16px;margin:17px 0 19px}
+  .hero-quote-benefits{font-size:12px;gap:5px 13px}
+  .hero-quote-panel{padding:20px 15px;border-radius:13px}
+  .hero-quote-panel-lead{margin-bottom:16px}
+  .hero-quote-option{padding:13px 12px;gap:10px;min-height:80px}
+  .hero-quote-option-copy strong{font-size:14px}
+  .hero-quote-option-copy small{font-size:12px}
+  .hero-quote-icon{width:39px;height:39px;flex-basis:39px;border-radius:10px}
+  .hero-quote-icon svg{width:23px;height:23px}
+  .hero-quote-arrow{font-size:21px}
+}
