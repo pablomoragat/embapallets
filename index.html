@@ -56,6 +56,20 @@
 .care-action p{margin-top:0}.care-action .button{white-space:normal;text-align:center}
 @media(max-width:760px){.care-grid,.care-base{grid-template-columns:1fr}.care-base{padding:20px;gap:14px}.care-grid article{padding:20px}.care-diagrams{gap:8px}.care-diagrams figure{padding:5px}.care-action{padding:18px}.care-action .button{padding:12px 16px}}
 </style>
+  <style>
+    #quote-confirmation {
+      max-width: min(28rem, calc(100% - 2rem));
+      padding: 1.5rem;
+      border: 0;
+      border-radius: 0.75rem;
+      color: #17202a;
+      background: #fff;
+    }
+
+    #quote-confirmation::backdrop {
+      background: rgb(0 0 0 / 55%);
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -398,7 +412,15 @@ Comuna de destino: ____</textarea>
   <button class="button primary full" type="submit">Solicitar cotización</button>
   <p class="full" id="quote-status" role="status" aria-atomic="true"></p>
   <p class="form-note full">Tus datos serán utilizados exclusivamente para responder esta cotización.</p>
-</form></div></section>
+</form>
+<dialog id="quote-confirmation" aria-labelledby="quote-confirmation-title" aria-describedby="quote-confirmation-message">
+  <h2 id="quote-confirmation-title">Solicitud enviada</h2>
+  <p id="quote-confirmation-message">Tu solicitud fue enviada correctamente. Nos pondremos en contacto contigo.</p>
+  <form method="dialog">
+    <button class="button primary" type="submit" autofocus>Aceptar</button>
+  </form>
+</dialog>
+</div></section>
   </main>
 
   <div class="floating-whatsapp-wrap" aria-label="Cotizar pallets por WhatsApp"><div class="floating-whatsapp-prompt">Cotiza en línea. Respuesta rápida por WhatsApp.<button class="floating-whatsapp-close" type="button" aria-label="Cerrar mensaje" onclick="this.parentElement.hidden = true">×</button></div><a class="floating-whatsapp" href="https://wa.me/56942009515?text=Hola%2C%20quiero%20cotizar%20pallets.%20Necesito%20indicar%20tipo%2C%20cantidad%20y%20medidas." target="_blank" rel="noopener" aria-label="Contactar a EMBAPALLETS por WhatsApp al +56 9 4200 95 15" title="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.8 9.8 0 0 0-8.42 14.84L2 22l5.3-1.53A10 10 0 1 0 12 2Zm0 18.18a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.14.91.94-3.06-.2-.31A8.18 8.18 0 1 1 12 20.18Zm4.49-6.13c-.25-.12-1.46-.72-1.69-.8-.23-.09-.4-.13-.57.12-.16.25-.64.8-.79.97-.14.16-.29.18-.53.06-.25-.12-1.04-.38-1.98-1.22a7.44 7.44 0 0 1-1.37-1.7c-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.57-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.12.16 1.75 2.67 4.24 3.75.59.25 1.05.41 1.42.52.59.19 1.13.16 1.55.1.48-.07 1.46-.6 1.67-1.18.2-.58.2-1.08.14-1.18-.06-.1-.22-.16-.47-.29Z"/></svg></a></div>
@@ -432,6 +454,14 @@ Comuna de destino: ____</textarea>
 
       form.reset();
       status.textContent = 'Tu solicitud fue enviada correctamente. Nos pondremos en contacto contigo.';
+      const confirmation = document.querySelector('#quote-confirmation');
+      if (typeof confirmation?.showModal === 'function' && !confirmation.open) {
+        // Re-enable the submit button so closing the dialog can restore focus.
+        button.disabled = false;
+        button.focus();
+        confirmation.showModal();
+        status.textContent = '';
+      }
     } catch {
       status.textContent = 'No pudimos confirmar el envío. Tus datos siguen en el formulario. Intenta de nuevo.';
     } finally {
